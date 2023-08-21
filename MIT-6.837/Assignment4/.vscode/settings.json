@@ -1,0 +1,10 @@
+{
+          "files.associations": {
+                    "glCanvas.C": "cpp",
+                    "image.C": "cpp",
+                    "light.C": "cpp",
+                    "matrix.C": "cpp",
+                    "rayTree.C": "cpp",
+                    "scene_parser.C": "cpp"
+          }
+}
