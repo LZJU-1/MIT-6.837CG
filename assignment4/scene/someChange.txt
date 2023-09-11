@@ -1,0 +1,9 @@
+char token[MAX_PARSER_TOKEN_LENGTH];
+  char filenameTemp[MAX_PARSER_TOKEN_LENGTH];
+  // get the filename
+  getToken(token); assert (!strcmp(token, "{"));
+  getToken(token); assert (!strcmp(token, "obj_file"));
+  getToken(filenameTemp); 
+  char add[MAX_PARSER_TOKEN_LENGTH] = "./data/";
+  strcat(add, filenameTemp);
+  char* filename = add;

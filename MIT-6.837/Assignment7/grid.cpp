@@ -4,8 +4,9 @@
 
 #include <algorithm>
 #include <unordered_map>
-
+#include <limits>
 #include "grid.h"
+#include "global.h"
 #include "rayTree.h"
 #include "raytracing_stats.h"
 
@@ -16,10 +17,16 @@ void Grid::paint() {
             for (int k = 0; k < nz; k++) {
                 // skip empty voxels
                 if (!occupied(i, j, k)) continue;
-
-                auto[p1, p2, p3, p4,
-                p5, p6, p7, p8] = getVoxelVertices(i, j, k);
-
+                Vec3f p1, p2, p3, p4, p5, p6, p7, p8;
+                auto temp = getVoxelVertices(i, j, k);
+                p1 = std::get<0>(temp);
+                p2 = std::get<1>(temp);
+                p3 = std::get<2>(temp);
+                p4 = std::get<3>(temp);
+                p5 = std::get<4>(temp);
+                p6 = std::get<5>(temp);
+                p7 = std::get<6>(temp);
+                p8 = std::get<7>(temp);
                 glBegin(GL_QUADS);
 
                 if (k == 0 || !occupied(i, j, k - 1)) {
@@ -174,8 +181,11 @@ int MarchingInfo::nextCell() {
         assert(false);
         ret = -1;
     }
-
-    auto[nx, ny, nz] = grid->getSize();
+    auto temp = grid->getSize();
+    int nx, ny, nz;
+    nx = std::get<0>(temp);
+    ny = std::get<1>(temp);
+    nz = std::get<2>(temp);
     if ((i < 0 || i >= nx) || (j < 0 || j >= ny) || (k < 0 || k >= nz)) {
         valid = false;
     }
@@ -185,7 +195,8 @@ int MarchingInfo::nextCell() {
 void Grid::hitFace(const BoundingBox *bbox, const Vec3f &inter, const MarchingInfo &mi, const int ret,
                    Vec3f &p1, Vec3f &p2, Vec3f &p3, Vec3f &p4, Vec3f &n) const {
     auto p = inter - bbox->getMin();
-    auto[i, j, k] = std::array{mi.i, mi.j, mi.k};
+    int i, j, k;
+    i = mi.i, j = mi.j, k = mi.k;
     if (ret == 0) {
         if (mi.signX < 0) i++;
         p1 = bbox->getMin() + Vec3f(lx * i, ly * j, lz * k);
@@ -249,7 +260,7 @@ bool Grid::intersect(const Ray &r, Hit &h, float tMin) {
                     auto obj = objs->getObject(i);
                     bool hasInter;
                     // query hit cache first to reduce intersection calculation
-                    if (hitCache.contains(obj)) {
+                    if (hitCache.find(obj) != hitCache.end()) {
                         auto p = hitCache[obj];
                         hasInter = p.first;
                         hTmp = p.second;

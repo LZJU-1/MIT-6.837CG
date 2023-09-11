@@ -5,6 +5,7 @@
                     "material.h": "c",
                     "glCanvas.C": "cpp",
                     "light.C": "cpp",
-                    "scene_parser.C": "cpp"
+                    "scene_parser.C": "cpp",
+                    "new": "cpp"
           }
 }

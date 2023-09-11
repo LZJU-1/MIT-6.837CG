@@ -65,8 +65,16 @@ void Triangle::paint() {
 }
 
 void Triangle::insertIntoGrid(Grid *g, Matrix *m) {
-    auto[nx, ny, nz] = g->getSize();
-    auto[lx, ly, lz] = g->getVoxelSize();
+    int nx, ny, nz;
+    float lx, ly, lz;
+    auto aTemp = g->getSize();
+    auto bTemp = g->getVoxelSize();
+    nx = std::get<0>(aTemp);
+    ny = std::get<1>(aTemp);
+    nz = std::get<2>(aTemp);
+    lx = std::get<0>(bTemp);
+    ly = std::get<1>(bTemp);
+    lz = std::get<2>(bTemp);
     auto ta = Vec3f(a), tb = Vec3f(b), tc = Vec3f(c);
     auto pMin = g->getMin();
     Object3D *objIn = this;

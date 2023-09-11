@@ -1,0 +1,10 @@
+{
+          "files.associations": {
+                    "glCanvas.C": "cpp",
+                    "main.C": "cpp",
+                    "matrix.C": "cpp",
+                    "parser.C": "cpp",
+                    "particle.C": "cpp",
+                    "system.C": "cpp"
+          }
+}

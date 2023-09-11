@@ -9,6 +9,7 @@
 #include "image.h"
 #include "scene_parser.h"
 #include "hit.h"
+#include <limits>
 
 class Renderer {
 public:

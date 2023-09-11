@@ -68,8 +68,7 @@ public:
     }
 
     [[nodiscard]] bool occupied(const std::tuple<int, int, int> &index) const {
-        auto[x, y, z] = index;
-        return occupied(x, y, z);
+        return occupied(std::get<0>(index), std::get<1>(index), std::get<2>(index));
     }
 
     [[nodiscard]] std::tuple<int, int, int> getSize() const {

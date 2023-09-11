@@ -125,8 +125,16 @@ void Sphere::paint() {
 
 void Sphere::insertIntoGrid(Grid *g, Matrix *m) {
     auto bMin = g->getMin(), bMax = g->getMax();
-    auto[nx, ny, nz] = g->getSize();
-    auto[lx, ly, lz] = g->getVoxelSize();
+    int nx, ny, nz;
+    float lx, ly, lz;
+    auto aTemp = g->getSize();
+    auto bTemp = g->getVoxelSize();
+    nx = std::get<0>(aTemp);
+    ny = std::get<1>(aTemp);
+    nz = std::get<2>(aTemp);
+    lx = std::get<0>(bTemp);
+    ly = std::get<1>(bTemp);
+    lz = std::get<2>(bTemp);
     auto diagHalf = sqrt(lx * lx + ly * ly + lz * lz) / 2.0f;
     Matrix mInv;
     Object3D *objIn = this;

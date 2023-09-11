@@ -5,7 +5,6 @@
 #ifndef ASSIGNMENT9_GENERATOR_H
 #define ASSIGNMENT9_GENERATOR_H
 
-#include <windows.h>
 #include <GL/gl.h>
 
 #include <ctime>

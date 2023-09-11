@@ -4,6 +4,7 @@
 
 #include "group.h"
 #include "global.h"
+#include <limits>
 
 void Group::addObject(int index, Object3D *object) {
     assert(index < objectNum);

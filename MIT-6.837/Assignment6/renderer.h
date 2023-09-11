@@ -7,6 +7,7 @@
 
 
 #include "image.h"
+#include <limits>
 #include "scene_parser.h"
 #include "hit.h"
 

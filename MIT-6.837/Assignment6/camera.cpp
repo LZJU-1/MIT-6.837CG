@@ -6,6 +6,7 @@
 
 #include "camera.h"
 #include "matrix.h"
+#include <limits>
 
 Ray OrthographicCamera::generateRay(Vec2f point) {
     point *= size;

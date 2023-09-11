@@ -1,8 +1,6 @@
 //
 // Created by kskun on 2022/3/20.
 //
-
-#include <windows.h>
 #include <GL/gl.h>
 
 #include "surface.h"

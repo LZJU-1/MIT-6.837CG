@@ -2,7 +2,6 @@
 #include <cassert>
 #include <cstring>
 
-#include <windows.h>
 #include <GL/glut.h>
 
 #include "scene_parser.h"

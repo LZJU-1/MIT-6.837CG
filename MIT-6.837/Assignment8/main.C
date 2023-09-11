@@ -2,7 +2,6 @@
 #include <assert.h>
 using namespace std;
 
-#include <windows.h>
 #include <GL/glut.h>
 
 #include "arg_parser.h"

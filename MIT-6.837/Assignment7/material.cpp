@@ -2,8 +2,7 @@
 // Created by kskun on 2021/11/21.
 //
 
-#include <windows.h>
-#include <gl/GL.h>
+#include <GL/glut.h>
 
 #include "material.h"
 #include "matrix.h"

@@ -1,4 +1,4 @@
-#include <windows.h>
+
 #include <GL/gl.h>
 
 #include "light.h"

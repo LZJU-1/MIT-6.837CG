@@ -9,7 +9,6 @@
 #include "boundingbox.h"
 
 // Included files for OpenGL Rendering
-#include <windows.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
 
@@ -126,7 +125,6 @@ void GLCanvas::display(void)
   for (int i=0; i<scene->getNumLights(); i++) {
     scene->getLight(i)->glInit(i);
   }
-
   if (visualize_grid) {
     if (visualize_grid_march == 0) {
       grid->paint();

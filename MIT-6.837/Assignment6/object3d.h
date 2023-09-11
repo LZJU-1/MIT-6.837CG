@@ -5,7 +5,6 @@
 #ifndef ASSIGNMENT1_OBJECT3D_H
 #define ASSIGNMENT1_OBJECT3D_H
 
-#include <windows.h>
 #include <GL/gl.h>
 
 #include "material.h"

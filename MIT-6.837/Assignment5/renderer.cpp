@@ -100,7 +100,7 @@ void RayTraceRenderer::Render() {
         for (int j = 0; j < image->Height(); j++) {
             auto ray = camera->generateRay(Vec2f((float) i / image->Width(),
                                                  (float) j / image->Height()));
-            std::cout << "hhhhh" << std::endl;
+          //  std::cout << "hhhhh" << std::endl;
             Hit hit;
             image->SetPixel(i, j, tracer->traceRay(ray, camera->getTMin(), 0, 1, 1, hit));
         }

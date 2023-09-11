@@ -99,8 +99,9 @@ void RayTraceRenderer::Render() {
     if (gridNX != -1) {
         auto grid = tracer->getGrid();
         auto bbox = grid->getBoundingBox();
-        auto[nx, ny, nz] = grid->getSize();
-        RayTracingStats::Initialize(width, height, bbox, nx, ny, nz);
+        std::tuple<int, int, int> temp = grid->getSize();
+        RayTracingStats::Initialize(width, height, bbox, std::get<0>(temp), 
+        std::get<1>(temp), std::get<2>(temp));
     } else {
         RayTracingStats::Initialize(width, height, group->getBoundingBox(), 1, 1, 1);
     }

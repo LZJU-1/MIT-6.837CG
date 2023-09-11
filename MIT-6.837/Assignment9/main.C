@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include <windows.h>
+#include <string.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
 

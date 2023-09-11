@@ -2,7 +2,6 @@
 // Created by KSkun on 2022/3/17.
 //
 
-#include <windows.h>
 #include <GL/gl.h>
 
 #include "curve.h"
